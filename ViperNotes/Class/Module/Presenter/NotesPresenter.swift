@@ -15,24 +15,30 @@ class NotesPresenter: ObservableObject {
     private let interactor: NotesInteractor
     private let router = NotesRouter()
     
-    @Published var notes: [NoteViewModel] = []
+    @Published var noteViewModels: [NoteViewModel] = []
     private var cancellables = Set<AnyCancellable>()
 
-    
     init(interactor: NotesInteractor) {
         self.interactor = interactor
-        interactor.model.$notes
-        .assign(to: \.notes, on: self)
+        interactor.$noteViewModels
+        .assign(to: \.noteViewModels, on: self)
         .store(in: &cancellables)
     }
     
+    // Draw
     func addButton() -> some View {
         Button(action: addNewNote) {
           Image(systemName: "plus")
         }
     }
     
+    // Events
     func addNewNote() {
       interactor.addNewNote()
+    }
+    
+    // Navigation
+    func detailView(note: NoteViewModel) -> some View {
+        router.detailView(note: note)
     }
 }

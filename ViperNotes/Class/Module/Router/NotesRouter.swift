@@ -7,7 +7,24 @@
 //
 
 import Foundation
+import CoreData
+import SwiftUI
 
-class NotesRouter {
+struct NotesRouter {
     
+    func listView(context: NSManagedObjectContext) -> some View {
+        
+        let persistence = CoreDataStack(context: context)
+        let dataLayer = DataLayer(persistence: persistence)
+        let contentView = NotesListView(presenter: NotesPresenter(interactor: NotesInteractor(model: dataLayer)))
+        
+        return contentView
+    }
+    
+    func detailView(note: NoteViewModel) -> some View {
+        
+        let contentView = NotesDetailView()
+        
+        return contentView
+    }
 }

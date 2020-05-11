@@ -13,10 +13,3 @@ struct NotesDetailView: View {
         Text("Hello, World!")
     }
 }
-
-//
-//struct NotesDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NotesDetailView()
-//    }
-//}

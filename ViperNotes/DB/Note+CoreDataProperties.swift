@@ -17,11 +17,9 @@ extension Note {
         return NSFetchRequest<Note>(entityName: "Note")
     }
 
-    @NSManaged public var body: String?
-    @NSManaged public var date: Date?
-    @NSManaged public var title: String?
-    @NSManaged public var id: UUID?
+    @NSManaged public var body: String
+    @NSManaged public var date: Date
+    @NSManaged public var title: String
+    @NSManaged public var id: UUID
 
 }
-
-extension Note: Identifiable {}

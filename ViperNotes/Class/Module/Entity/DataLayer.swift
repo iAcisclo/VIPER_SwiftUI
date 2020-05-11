@@ -10,42 +10,26 @@ import SwiftUI
 import Combine
 
 class DataLayer {
-    
-//    private let persistence = CoreDataStack()
-    
+        
     private let persistence: CoreDataStack
+    @Published var notes: [Note] = []
+    private var cancellables = Set<AnyCancellable>()
+    
     init(persistence: CoreDataStack) {
         self.persistence = persistence
     }
-    
-    @Published var notes: [NoteViewModel] = []
-    
-    private var cancellables = Set<AnyCancellable>()
 
-    func load() {
-        
-        let formatter = DateFormatter()
-        
-      persistence.load()
-        .replaceError(with: [])
-        .map({ notes -> [NoteViewModel] in
-            return notes.map{
-                let noteViewModel = NoteViewModel(id: $0.id ?? UUID())
-                noteViewModel.title = $0.title ?? ""
-                noteViewModel.body = $0.body ?? ""
-                noteViewModel.date = formatter.string(from: $0.date ?? Date())
-                return noteViewModel
-            }
-        })
-        .assign(to: \.notes, on: self)
-        .store(in: &cancellables)
+    func fetch() -> AnyPublisher<[Note],Error>  {
+        return persistence.fetch()
     }
     
-    func save() {
-        persistence.save()
+    func addNewNote(title: String, body: String, date: Date) {
+        persistence.addNewNote(title: title,
+                               body: body,
+                               date: date)
     }
     
     func removeAll() {
-        persistence.removeAll()
+        persistence.removeAllNotes()
     }
 }

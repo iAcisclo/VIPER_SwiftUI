@@ -11,9 +11,9 @@ import Combine
 
 final class NoteViewModel {
     
-    @Published var title: String = ""
-    @Published var body: String = ""
-    @Published var date: String = ""
+    var title: String = ""
+    var body: String = ""
+    var date: String = ""
     let id: UUID
 
     init(id: UUID) {

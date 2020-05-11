@@ -15,21 +15,12 @@ struct NotesListView: View {
     var body: some View {
         NavigationView {
             List {
-              ForEach (presenter.notes, id: \.id) { item in
-                Text(item.title)
+              ForEach (presenter.noteViewModels, id: \.id) { item in
+                NavigationLink(item.title, destination: self.presenter.detailView(note: item))
               }
             }
-            .navigationBarTitle("Roadtrips", displayMode: .inline)
+            .navigationBarTitle("Notes", displayMode: .inline)
             .navigationBarItems(trailing: presenter.addButton())
         }
-        
-    }
-}
-
-
-struct NotesListView_Previews: PreviewProvider {
-    static var previews: some View {
-//        NotesListView()
-        Text("meh")
     }
 }

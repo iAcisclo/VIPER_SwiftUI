@@ -13,23 +13,36 @@ import CoreData
 
 class CoreDataStack {
     
-//    @Environment(\.managedObjectContext) var managedObjectContext
-//    @FetchRequest(entity: Note.entity(), sortDescriptors: []) var notes: FetchedResults<Note>
-    
-    var managedObjectContext: NSManagedObjectContext
+    private var managedObjectContext: NSManagedObjectContext
     
     init(context: NSManagedObjectContext) {
         self.managedObjectContext = context
     }
     
-    func load() -> AnyPublisher<[Note],Error>  {
+    private func allNotes() -> [Note] {
+        do {
+            let fetchRequest : NSFetchRequest<Note> = Note.fetchRequest()
+            return try self.managedObjectContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("\(error), \(error.userInfo)")
+            return []
+        }
+    }
+    
+    private func save() {
+        do {
+            try self.managedObjectContext.save()
+        } catch let error as NSError {
+            print("\(error), \(error.userInfo)")
+        }
+    }
+    
+    
+    // Public
+    func fetch() -> AnyPublisher<[Note],Error>  {
         
         return Future<[Note],Error> { promise in
             DispatchQueue.main.async {
-              
-                
-                
-//                let fetchRequest : @FetchRequest = Note.fe
                 do {
                     let fetchRequest : NSFetchRequest<Note> = Note.fetchRequest()
                     let results = try self.managedObjectContext.fetch(fetchRequest)
@@ -43,50 +56,19 @@ class CoreDataStack {
         }.eraseToAnyPublisher()
     }
     
-    func save() {
-        var r: [Note]
-        do {
-            let fetchRequest : NSFetchRequest<Note> = Note.fetchRequest()
-            let results = try self.managedObjectContext.fetch(fetchRequest)
-            r = results
-        } catch let error as NSError {
-            print("\(error), \(error.userInfo)")
-            r = []
-        }
-        
-        let entity = NSEntityDescription.entity(forEntityName: "Note", in: self.managedObjectContext)
-        let notification = NSManagedObject(entity: entity!, insertInto: self.managedObjectContext)
-        notification.setValue("title \(r.count)", forKey: "title")
-        notification.setValue("body", forKey: "body")
-        notification.setValue(Date(), forKey: "date")
-        do {
-            try self.managedObjectContext.save()
-        } catch let error as NSError {
-            print("\(error), \(error.userInfo)")
-        }
+    func addNewNote(title: String, body: String, date: Date) {
+        let note = Note(context: managedObjectContext)
+        note.id = UUID()
+        note.title = title
+        note.body = body
+        note.date = date
+        save()
     }
     
-    func removeAll() {
-        
-        var objects: [NSManagedObject]
-        
-        let fetchRequest : NSFetchRequest<Note> = Note.fetchRequest()
-        do {
-            let results = try managedObjectContext.fetch(fetchRequest)
-            objects = results
-        } catch let error as NSError {
-            print("\(error), \(error.userInfo)")
-            objects = []
-        }
-        
-        objects.forEach { object in
+    func removeAllNotes() {
+        allNotes().forEach { object in
             managedObjectContext.delete(object)
         }
-        
-        do {
-            try managedObjectContext.save()
-        } catch let error as NSError {
-            print("\(error), \(error.userInfo)")
-        }
+        save()
     }
 }
