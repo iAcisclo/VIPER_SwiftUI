@@ -7,15 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		932EFE1C24657DAA000EE607 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932EFE1B24657DAA000EE607 /* CoreDataStack.swift */; };
+		932EFE1E24657DC6000EE607 /* DataLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932EFE1D24657DC6000EE607 /* DataLayer.swift */; };
+		932EFE2124657F17000EE607 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932EFE1F24657F17000EE607 /* Note+CoreDataClass.swift */; };
+		932EFE2224657F17000EE607 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932EFE2024657F17000EE607 /* Note+CoreDataProperties.swift */; };
 		934D2D5F246130DB00B47938 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934D2D5E246130DB00B47938 /* AppDelegate.swift */; };
 		934D2D61246130DB00B47938 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934D2D60246130DB00B47938 /* SceneDelegate.swift */; };
 		934D2D64246130DB00B47938 /* ViperNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 934D2D62246130DB00B47938 /* ViperNotes.xcdatamodeld */; };
-		934D2D66246130DB00B47938 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934D2D65246130DB00B47938 /* ContentView.swift */; };
+		934D2D66246130DB00B47938 /* NotesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934D2D65246130DB00B47938 /* NotesListView.swift */; };
 		934D2D68246130DC00B47938 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 934D2D67246130DC00B47938 /* Assets.xcassets */; };
 		934D2D6B246130DC00B47938 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 934D2D6A246130DC00B47938 /* Preview Assets.xcassets */; };
 		934D2D6E246130DC00B47938 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 934D2D6C246130DC00B47938 /* LaunchScreen.storyboard */; };
 		934D2D79246130DC00B47938 /* ViperNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934D2D78246130DC00B47938 /* ViperNotesTests.swift */; };
 		934D2D84246130DC00B47938 /* ViperNotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934D2D83246130DC00B47938 /* ViperNotesUITests.swift */; };
+		934D2D942461461E00B47938 /* NotesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934D2D932461461E00B47938 /* NotesInteractor.swift */; };
+		934D2D962461462B00B47938 /* NotesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934D2D952461462B00B47938 /* NotesPresenter.swift */; };
+		934D2D982461464A00B47938 /* NotesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934D2D972461464A00B47938 /* NotesRouter.swift */; };
+		934D2DA2246146EC00B47938 /* NotesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934D2DA1246146EC00B47938 /* NotesDetailView.swift */; };
+		934D2DA624614E3400B47938 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934D2DA524614E3400B47938 /* NoteViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +45,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		932EFE1B24657DAA000EE607 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		932EFE1D24657DC6000EE607 /* DataLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLayer.swift; sourceTree = "<group>"; };
+		932EFE1F24657F17000EE607 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
+		932EFE2024657F17000EE607 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		934D2D5B246130DB00B47938 /* ViperNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViperNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		934D2D5E246130DB00B47938 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		934D2D60246130DB00B47938 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		934D2D63246130DB00B47938 /* ViperNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ViperNotes.xcdatamodel; sourceTree = "<group>"; };
-		934D2D65246130DB00B47938 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		934D2D65246130DB00B47938 /* NotesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListView.swift; sourceTree = "<group>"; };
 		934D2D67246130DC00B47938 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		934D2D6A246130DC00B47938 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		934D2D6D246130DC00B47938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +64,11 @@
 		934D2D7F246130DC00B47938 /* ViperNotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViperNotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		934D2D83246130DC00B47938 /* ViperNotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViperNotesUITests.swift; sourceTree = "<group>"; };
 		934D2D85246130DC00B47938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		934D2D932461461E00B47938 /* NotesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesInteractor.swift; sourceTree = "<group>"; };
+		934D2D952461462B00B47938 /* NotesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesPresenter.swift; sourceTree = "<group>"; };
+		934D2D972461464A00B47938 /* NotesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesRouter.swift; sourceTree = "<group>"; };
+		934D2DA1246146EC00B47938 /* NotesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesDetailView.swift; sourceTree = "<group>"; };
+		934D2DA524614E3400B47938 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,11 +121,10 @@
 			children = (
 				934D2D5E246130DB00B47938 /* AppDelegate.swift */,
 				934D2D60246130DB00B47938 /* SceneDelegate.swift */,
-				934D2D65246130DB00B47938 /* ContentView.swift */,
-				934D2D67246130DC00B47938 /* Assets.xcassets */,
-				934D2D6C246130DC00B47938 /* LaunchScreen.storyboard */,
-				934D2D6F246130DC00B47938 /* Info.plist */,
-				934D2D62246130DB00B47938 /* ViperNotes.xcdatamodeld */,
+				934D2D992461465300B47938 /* Class */,
+				934D2D9F246146A500B47938 /* UI */,
+				934D2DA3246147D000B47938 /* DB */,
+				934D2DA0246146BD00B47938 /* Supporting files */,
 				934D2D69246130DC00B47938 /* Preview Content */,
 			);
 			path = ViperNotes;
@@ -137,6 +154,96 @@
 				934D2D85246130DC00B47938 /* Info.plist */,
 			);
 			path = ViperNotesUITests;
+			sourceTree = "<group>";
+		};
+		934D2D992461465300B47938 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				934D2D9A2461465C00B47938 /* Module */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		934D2D9A2461465C00B47938 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				934D2D9E2461467800B47938 /* Router */,
+				934D2D9D2461467200B47938 /* View */,
+				934D2D9C2461466E00B47938 /* Presenter */,
+				934D2D9B2461466B00B47938 /* Interactor */,
+				934D2DA424614E2600B47938 /* Entity */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		934D2D9B2461466B00B47938 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				934D2D932461461E00B47938 /* NotesInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		934D2D9C2461466E00B47938 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				934D2D952461462B00B47938 /* NotesPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		934D2D9D2461467200B47938 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				934D2D65246130DB00B47938 /* NotesListView.swift */,
+				934D2DA1246146EC00B47938 /* NotesDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		934D2D9E2461467800B47938 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				934D2D972461464A00B47938 /* NotesRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		934D2D9F246146A500B47938 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				934D2D6C246130DC00B47938 /* LaunchScreen.storyboard */,
+				934D2D67246130DC00B47938 /* Assets.xcassets */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		934D2DA0246146BD00B47938 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				934D2D6F246130DC00B47938 /* Info.plist */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		934D2DA3246147D000B47938 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				932EFE1F24657F17000EE607 /* Note+CoreDataClass.swift */,
+				932EFE2024657F17000EE607 /* Note+CoreDataProperties.swift */,
+				934D2D62246130DB00B47938 /* ViperNotes.xcdatamodeld */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		934D2DA424614E2600B47938 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				932EFE1D24657DC6000EE607 /* DataLayer.swift */,
+				932EFE1B24657DAA000EE607 /* CoreDataStack.swift */,
+				934D2DA524614E3400B47938 /* NoteViewModel.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,8 +379,17 @@
 			files = (
 				934D2D5F246130DB00B47938 /* AppDelegate.swift in Sources */,
 				934D2D64246130DB00B47938 /* ViperNotes.xcdatamodeld in Sources */,
-				934D2D66246130DB00B47938 /* ContentView.swift in Sources */,
+				934D2D942461461E00B47938 /* NotesInteractor.swift in Sources */,
+				932EFE2224657F17000EE607 /* Note+CoreDataProperties.swift in Sources */,
+				934D2DA2246146EC00B47938 /* NotesDetailView.swift in Sources */,
+				934D2D66246130DB00B47938 /* NotesListView.swift in Sources */,
+				934D2DA624614E3400B47938 /* NoteViewModel.swift in Sources */,
+				934D2D962461462B00B47938 /* NotesPresenter.swift in Sources */,
+				934D2D982461464A00B47938 /* NotesRouter.swift in Sources */,
+				932EFE1E24657DC6000EE607 /* DataLayer.swift in Sources */,
+				932EFE2124657F17000EE607 /* Note+CoreDataClass.swift in Sources */,
 				934D2D61246130DB00B47938 /* SceneDelegate.swift in Sources */,
+				932EFE1C24657DAA000EE607 /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,7 +558,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ViperNotes/Preview Content\"";
 				DEVELOPMENT_TEAM = U7LN8HVLD8;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ViperNotes/Info.plist;
+				INFOPLIST_FILE = "ViperNotes/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -462,7 +578,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ViperNotes/Preview Content\"";
 				DEVELOPMENT_TEAM = U7LN8HVLD8;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ViperNotes/Info.plist;
+				INFOPLIST_FILE = "ViperNotes/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
