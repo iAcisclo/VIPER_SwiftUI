@@ -22,9 +22,6 @@ struct NotesRouter {
     }
     
     func detailView(note: NoteViewModel) -> some View {
-        
-        let contentView = NotesDetailView()
-        
-        return contentView
+        NotesDetailView(note: note)
     }
 }
