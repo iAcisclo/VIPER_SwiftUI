@@ -10,11 +10,10 @@ import Combine
 
 class NotesPresenter: ObservableObject {
  
-    private var interactor: NotesInteractor
+    private let interactor: NotesInteractor
     private let router = NotesRouter()
-    
-    @Published var noteViewModels: [NoteViewModel] = []
     private var cancellables = Set<AnyCancellable>()
+    @Published var noteViewModels: [NoteViewModel] = []
 
     init(interactor: NotesInteractor) {
         self.interactor = interactor

@@ -13,8 +13,8 @@ import CoreData
 class CoreDataStack {
     
     private var managedObjectContext: NSManagedObjectContext
-    @Published var notes: [Note] = []
     private var cancellables = Set<AnyCancellable>()
+    @Published var notes: [Note] = []
 
     init(context: NSManagedObjectContext) {
         self.managedObjectContext = context
@@ -41,15 +41,15 @@ class CoreDataStack {
         publish()
     }
     
-    private func publish() {
-        notes = allNotes()
-    }
-    
     private func removeAllNotes() {
         allNotes().forEach { object in
             managedObjectContext.delete(object)
         }
         save()
+    }
+    
+    private func publish() {
+        notes = allNotes()
     }
     
     // MARK: Public functions
