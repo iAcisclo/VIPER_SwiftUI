@@ -15,7 +15,7 @@ struct NotesRouter {
     func listView(context: NSManagedObjectContext) -> some View {
         
         let persistence = CoreDataStack(context: context)
-        let dataLayer = DataLayer(persistence: persistence)
+        let dataLayer = DataLayer(provider: persistence)
         let contentView = NotesListView(presenter: NotesPresenter(interactor: NotesInteractor(model: dataLayer)))
         
         return contentView

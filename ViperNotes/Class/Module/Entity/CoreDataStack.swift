@@ -5,11 +5,9 @@
 //  Created by Ignacio Acisclo on 08/05/2020.
 //  Copyright © 2020 Ignacio Acisclo. All rights reserved.
 //
-
 import SwiftUI
 import Combine
 import CoreData
-
 
 protocol DataProvider {
     var notesPublisher: Published<[Note]>.Publisher { get }
@@ -28,7 +26,6 @@ class CoreDataStack {
         publish()
     }
     
-    // MARK: Private functions
     private func allNotes() -> [Note] {
         do {
             let fetchRequest : NSFetchRequest<Note> = Note.fetchRequest()
