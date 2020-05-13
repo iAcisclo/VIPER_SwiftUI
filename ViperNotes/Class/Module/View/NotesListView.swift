@@ -18,6 +18,7 @@ struct NotesListView: View {
               ForEach (presenter.noteViewModels, id: \.id) { item in
                 NavigationLink(item.title, destination: self.presenter.detailView(note: item))
               }
+              .onDelete(perform: presenter.delete)
             }
             .navigationBarTitle("Notes", displayMode: .inline)
             .navigationBarItems(trailing: presenter.addButton())

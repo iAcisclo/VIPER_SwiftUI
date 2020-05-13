@@ -10,6 +10,13 @@ import SwiftUI
 import Combine
 import CoreData
 
+
+protocol DataProvider {
+    var notesPublisher: Published<[Note]>.Publisher { get }
+    func addNewNote(title: String, body: String, date: Date)
+    func delete(_ note: Note)
+}
+
 class CoreDataStack {
     
     private var managedObjectContext: NSManagedObjectContext
@@ -51,14 +58,25 @@ class CoreDataStack {
     private func publish() {
         notes = allNotes()
     }
+}
+
+extension CoreDataStack: DataProvider {
     
-    // MARK: Public functions
+    var notesPublisher: Published<[Note]>.Publisher {
+        $notes
+    }
+    
     func addNewNote(title: String, body: String, date: Date) {
         let note = Note(context: managedObjectContext)
         note.id = UUID()
         note.title = title
         note.body = body
         note.date = date
+        save()
+    }
+       
+    func delete(_ note: Note) {
+        self.managedObjectContext.delete(note)
         save()
     }
 }

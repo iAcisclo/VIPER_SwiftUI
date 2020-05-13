@@ -10,26 +10,34 @@ import Combine
 
 class DataLayer {
         
-    private let persistence: CoreDataStack
+    private let provider: DataProvider
     private var cancellables = Set<AnyCancellable>()
     @Published var notes: [Note] = []
     
-    init(persistence: CoreDataStack) {
-        self.persistence = persistence
+    init(persistence: DataProvider) {
+        self.provider = persistence
         setup()
     }
     
-    // MARK: Private functions
     private func setup() {
-        self.persistence.$notes
+        self.provider.notesPublisher
         .assign(to: \.notes, on: self)
         .store(in: &cancellables)
     }
+}
+
+extension DataLayer: DataProvider {
+    var notesPublisher: Published<[Note]>.Publisher {
+        $notes
+    }
     
-    // MARK: Public functions
     func addNewNote(title: String, body: String, date: Date) {
-        persistence.addNewNote(title: title,
-                               body: body,
-                               date: date)
+        provider.addNewNote(title: title,
+                            body: body,
+                            date: date)
+    }
+       
+    func delete(_ note: Note) {
+        provider.delete(note)
     }
 }

@@ -35,6 +35,10 @@ class NotesPresenter: ObservableObject {
       interactor.addNewNote()
     }
     
+    func delete(_ index: IndexSet) {
+        interactor.deleteNote(index)
+    }
+    
     // MARK: Navigation
     func detailView(note: NoteViewModel) -> some View {
         router.detailView(note: note)

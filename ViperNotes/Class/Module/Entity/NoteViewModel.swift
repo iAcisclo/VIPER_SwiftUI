@@ -9,14 +9,9 @@
 import Foundation
 import Combine
 
-final class NoteViewModel {
-    
-    var title: String = ""
-    var body: String = ""
-    var date: String = ""
+struct NoteViewModel {
+    let title: String
+    let body: String
+    let date: String
     let id: UUID
-
-    init(id: UUID) {
-        self.id = id
-    }
 }

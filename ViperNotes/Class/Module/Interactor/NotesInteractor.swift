@@ -28,11 +28,7 @@ class NotesInteractor {
         self.model.$notes
             .map({ notes -> [NoteViewModel] in
                 return notes.map{
-                    let noteViewModel = NoteViewModel(id: $0.id)
-                    noteViewModel.title = $0.title
-                    noteViewModel.body = $0.body
-                    noteViewModel.date = self.formatter.string(from: $0.date)
-                    return noteViewModel
+                    NoteViewModel(title: $0.title, body: $0.body, date: self.formatter.string(from: $0.date), id: $0.id)
                 }
             })
             .replaceError(with: [])
@@ -43,5 +39,15 @@ class NotesInteractor {
     // MARK: Public functions
     func addNewNote() {
         model.addNewNote(title: "Note \(noteViewModels.count)", body: "Note body", date: Date() )
+    }
+    
+    func deleteNote(_ index: IndexSet) {
+        
+        var notesCopy = noteViewModels
+        notesCopy.move(fromOffsets: index, toOffset: 0)
+        
+        if let noteToDelete = model.notes.filter({ notesCopy.first!.id == $0.id }).first {
+            model.delete(noteToDelete)
+        }
     }
 }
