@@ -5,7 +5,7 @@
 //  Created by Ignacio Acisclo on 13/05/2020.
 //  Copyright © 2020 Ignacio Acisclo. All rights reserved.
 //
-import SwiftUI
+import Foundation
 import Combine
 
 class DataLayer {
@@ -35,5 +35,9 @@ class DataLayer {
     
     func delete(_ note: Note) {
         dataProvider.delete(note)
+    }
+    
+    func deleteAllNotes() {
+        dataProvider.deleteAllNotes()
     }
 }

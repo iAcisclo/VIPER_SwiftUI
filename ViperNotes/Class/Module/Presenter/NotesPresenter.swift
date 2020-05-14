@@ -24,15 +24,21 @@ class NotesPresenter: ObservableObject {
     }
     
     // MARK: Draw
-    func addButton() -> some View {
-        Button(action: addNewNote) {
-          Image(systemName: "plus")
+    func topButton() -> some View {
+        if interactor.showAddButton() {
+            return Button(action: interactor.addNewNote) {
+              Image(systemName: "plus")
+            }
+        } else {
+            return Button(action: interactor.deleteAllNotes) {
+              Image(systemName: "trash")
+            }
         }
     }
     
     // MARK: Events
     func addNewNote() {
-      interactor.addNewNote()
+        interactor.addNewNote()
     }
     
     func delete(_ index: IndexSet) {

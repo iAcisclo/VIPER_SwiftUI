@@ -5,7 +5,6 @@
 //  Created by Ignacio Acisclo on 08/05/2020.
 //  Copyright © 2020 Ignacio Acisclo. All rights reserved.
 //
-import SwiftUI
 import Combine
 import CoreData
 
@@ -13,6 +12,7 @@ protocol DataProvider {
     var notesPublisher: Published<[Note]>.Publisher { get }
     func addNewNote(title: String, body: String, date: Date)
     func delete(_ note: Note)
+    func deleteAllNotes()
 }
 
 class CoreDataStack {
@@ -20,6 +20,7 @@ class CoreDataStack {
     private var managedObjectContext: NSManagedObjectContext
     private var cancellables = Set<AnyCancellable>()
     @Published var notes: [Note] = []
+    
 
     init(context: NSManagedObjectContext) {
         self.managedObjectContext = context
@@ -45,13 +46,6 @@ class CoreDataStack {
         publish()
     }
     
-    private func removeAllNotes() {
-        allNotes().forEach { object in
-            managedObjectContext.delete(object)
-        }
-        save()
-    }
-    
     private func publish() {
         notes = allNotes()
     }
@@ -74,6 +68,13 @@ extension CoreDataStack: DataProvider {
        
     func delete(_ note: Note) {
         self.managedObjectContext.delete(note)
+        save()
+    }
+    
+    func deleteAllNotes() {
+        allNotes().forEach { object in
+            managedObjectContext.delete(object)
+        }
         save()
     }
 }

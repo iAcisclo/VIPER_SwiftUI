@@ -3,4 +3,129 @@
    uuid = "CFEA3950-8B3B-4D30-8B44-CEFE66965795"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD1A91FB-A239-454D-8E14-C2DDA113DA94"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViperNotes/Class/Module/Entity/DataLayer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "DataLayer"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "AD1A91FB-A239-454D-8E14-C2DDA113DA94 - 1712e62cc881de1f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ViperNotes.DataLayer.init(persistence: ViperNotes.CoreDataStack) -&gt; ViperNotes.DataLayer"
+                  moduleName = "ViperNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iacisclo/Documents/Apps/ViperNotes/ViperNotes/Class/Module/Entity/DataLayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "97">
+               </Location>
+               <Location
+                  uuid = "AD1A91FB-A239-454D-8E14-C2DDA113DA94 - aed8fc6b49133d45"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of ViperNotes.DataLayer.notes : Swift.Array&lt;ViperNotes.NoteViewModel&gt;"
+                  moduleName = "ViperNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iacisclo/Documents/Apps/ViperNotes/ViperNotes/Class/Module/Entity/DataLayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "AD1A91FB-A239-454D-8E14-C2DDA113DA94 - c7e824010cc5c356"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ViperNotes.DataLayer.notes.getter : Swift.Array&lt;ViperNotes.NoteViewModel&gt;"
+                  moduleName = "ViperNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iacisclo/Documents/Apps/ViperNotes/ViperNotes/Class/Module/Entity/DataLayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "AD1A91FB-A239-454D-8E14-C2DDA113DA94 - be38b368fa63976a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ViperNotes.DataLayer.notes.setter : Swift.Array&lt;ViperNotes.NoteViewModel&gt;"
+                  moduleName = "ViperNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iacisclo/Documents/Apps/ViperNotes/ViperNotes/Class/Module/Entity/DataLayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "130">
+               </Location>
+               <Location
+                  uuid = "AD1A91FB-A239-454D-8E14-C2DDA113DA94 - e82eeeae6493445b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ViperNotes.DataLayer.notes.modify : Swift.Array&lt;ViperNotes.NoteViewModel&gt;"
+                  moduleName = "ViperNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iacisclo/Documents/Apps/ViperNotes/ViperNotes/Class/Module/Entity/DataLayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "58">
+               </Location>
+               <Location
+                  uuid = "AD1A91FB-A239-454D-8E14-C2DDA113DA94 - b1ae1255bc0f149a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ViperNotes.DataLayer.notes.modify : Swift.Array&lt;ViperNotes.NoteViewModel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "ViperNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iacisclo/Documents/Apps/ViperNotes/ViperNotes/Class/Module/Entity/DataLayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "AD1A91FB-A239-454D-8E14-C2DDA113DA94 - 572a8cad269802fe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ViperNotes.DataLayer.$notes.getter : Combine.Published&lt;Swift.Array&lt;ViperNotes.NoteViewModel&gt;&gt;.Publisher"
+                  moduleName = "ViperNotes"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iacisclo/Documents/Apps/ViperNotes/ViperNotes/Class/Module/Entity/DataLayer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "110">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

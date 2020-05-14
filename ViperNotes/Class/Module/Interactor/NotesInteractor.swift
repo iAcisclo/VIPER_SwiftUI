@@ -7,7 +7,6 @@
 //
 import Foundation
 import Combine
-import SwiftUI
 
 class NotesInteractor {
     
@@ -36,6 +35,15 @@ class NotesInteractor {
     }
     
     // MARK: Public functions
+    
+    func showAddButton() -> Bool {
+        noteViewModels.count < 10
+    }
+    
+    func deleteAllNotes() {
+        model.deleteAllNotes()
+    }
+    
     func addNewNote() {
         model.addNewNote(title: "Note \(noteViewModels.count)", body: "Note body", date: Date() )
     }
