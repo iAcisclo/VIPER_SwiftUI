@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NotesListView: View {
     
-    @ObservedObject var presenter: NotesPresenter
+    @StateObject var presenter: NotesPresenter
     
     var body: some View {
         NavigationView {

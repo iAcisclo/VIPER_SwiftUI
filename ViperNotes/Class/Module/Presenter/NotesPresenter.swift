@@ -17,7 +17,6 @@ class NotesPresenter: ObservableObject {
 
     init(interactor: NotesInteractor) {
         self.interactor = interactor
-        
         interactor.$noteViewModels
         .assign(to: \.noteViewModels, on: self)
         .store(in: &cancellables)
